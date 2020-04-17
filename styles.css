@@ -1,0 +1,20 @@
+/* GLOBAL RULES */
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(1fr);
+  grid-template-areas:
+    "win-count gameboard-head gameboard-head win-count"
+    "wins-grid gameboard gameboard wins-grid"
+    "wins-grid gameboard gameboard wins-grid"
+    "wins-grid . . wins-grid";
+  background-color: #F4FEC1;
+  text-align: center;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: #353D2F;
+}
