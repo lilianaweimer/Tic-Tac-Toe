@@ -18,3 +18,14 @@ h2 {
   font-family: sans-serif;
   color: #353D2F;
 }
+
+/* IMAGE RULES */
+img.player-image {
+  height: 75px;
+  width: auto;
+}
+
+img.mini-gameboard-tile {
+  height: 20px;
+  width: auto;
+}
