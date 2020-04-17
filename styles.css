@@ -29,3 +29,62 @@ img.mini-gameboard-tile {
   height: 20px;
   width: auto;
 }
+
+/* PLAYER SECTION RULES */
+.player-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #D9F9A5;
+}
+
+.win-count {
+  grid-area: win-count;
+  background-color: #D9F9A5;
+}
+
+.player-wins-grid {
+  grid-area: wins-grid;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mini-gameboard {
+  display: grid;
+  grid-template-rows: 20px 20px 20px;
+  grid-template-columns: 20px 20px 20px;
+  place-items: center / center;
+  place-content: center / center;
+  grid-gap: 1px;
+  background-color: #F4FEC1;
+  border: 1px solid lightslategrey;
+  margin: 3px;
+}
+
+/* GAMEBOARD SECTION RULES */
+.game-board-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #F4FEC1;
+}
+
+.gameboard-header {
+  grid-area: gameboard-head;
+}
+
+img.gameboard-tile {
+  height: 100px;
+  width: auto;
+  border: 2px solid black;
+}
+
+.gameboard {
+  grid-area: gameboard;
+  align-self: center;
+  display: grid;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px;
+  place-items: center / center;
+  place-content: center / center;
+  background-color: #F4FEC1;
+  border: none;
+}
