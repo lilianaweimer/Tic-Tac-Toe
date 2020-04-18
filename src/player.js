@@ -6,11 +6,11 @@ class Player {
     //double check if/how wins should be passed in as parameter!
   }
 
-  // saveWinsToStorage() {
-  //
-  // }
-  //
-  // retrieveWinsFromStorage() {
-  //
-  // }
+  saveWinsToStorage() {
+  //stringify wins array and put it into local storage
+  }
+
+  retrieveWinsFromStorage() {
+  //remove wins array from storage and parse
+  }
 }
