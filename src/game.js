@@ -8,8 +8,19 @@
 // A way to reset the Game’s board to begin a new game
 class Game {
   constructor() {
-  this.playerOne = new Player("Player One", /*spidertoken*/);
-  this.playerTwo = new Player("Player Two", /*flytoken*/);
+  this.board = {
+    A1: undefined,
+    A2: undefined,
+    A2: undefined,
+    B1: undefined,
+    B2: undefined,
+    B3: undefined,
+    C1: undefined,
+    C2: undefined,
+    C3: undefined
+  }
+  this.playerOne = new Player("Player One", "spider");
+  this.playerTwo = new Player("Player Two", "fly");
 
   checkWinConditions() {
     //if there is a row, column, or diagonal that all are the same token
