@@ -19,17 +19,6 @@ h2 {
   color: #353D2F;
 }
 
-/* IMAGE RULES */
-img.player-image {
-  height: 75px;
-  width: auto;
-}
-
-img.mini-gameboard-tile {
-  height: 20px;
-  width: auto;
-}
-
 /* PLAYER SECTION RULES */
 .player-section {
   display: flex;
@@ -87,4 +76,15 @@ img.gameboard-tile {
   place-content: center / center;
   background-color: #F4FEC1;
   border: none;
+}
+
+/* IMAGE RULES */
+img.player-image {
+  height: 75px;
+  width: auto;
+}
+
+img.mini-gameboard-tile {
+  height: 20px;
+  width: auto;
 }
