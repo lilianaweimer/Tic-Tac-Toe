@@ -6,22 +6,27 @@
 // A way to detect when a game is a draw (no one has won)
 // A way to save a winning Game’s board data to the correct player’s wins array
 // A way to reset the Game’s board to begin a new game
+
 class Game {
-
-  createPlayerOne() {
-    return new Player("Player One", "spider");
-  }
-
-  createPlayerTwo() {
-    return new Player("Player Two", "fly");
-  }
-
-  currentGameBoard??????????() {
-
+  constructor(playerOne, playerTwo) {
+    this.gameboard = {
+      A1: null,
+      A2: null,
+      A2: null,
+      B1: null,
+      B2: null,
+      B3: null,
+      C1: null,
+      C2: null,
+      C3: null
+    };
+    this.playerOne = playerOne;
+    this.playerTwo = playerTwo;
   }
 
   checkWinConditions() {
     //if there is a row, column, or diagonal that all are the same token
+    return this.players;
     //then that player wins--so update their win count
     //and reset the board
   }
