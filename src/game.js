@@ -7,20 +7,18 @@
 // A way to save a winning Game’s board data to the correct player’s wins array
 // A way to reset the Game’s board to begin a new game
 class Game {
-  constructor() {
-  this.board = {
-    A1: undefined,
-    A2: undefined,
-    A2: undefined,
-    B1: undefined,
-    B2: undefined,
-    B3: undefined,
-    C1: undefined,
-    C2: undefined,
-    C3: undefined
+
+  createPlayerOne() {
+    return new Player("Player One", "spider");
   }
-  this.playerOne = new Player("Player One", "spider");
-  this.playerTwo = new Player("Player Two", "fly");
+
+  createPlayerTwo() {
+    return new Player("Player Two", "fly");
+  }
+
+  currentGameBoard??????????() {
+
+  }
 
   checkWinConditions() {
     //if there is a row, column, or diagonal that all are the same token
@@ -43,8 +41,16 @@ class Game {
   }
 
   resetGameBoard() {
-    //when win conditions are met OR there is a draw
-    //clear the board of all tokens
-    //and reactivate click functionality on the tiles
+    this.board = {
+      A1: null,
+      A2: null,
+      A2: null,
+      B1: null,
+      B2: null,
+      B3: null,
+      C1: null,
+      C2: null,
+      C3: null
+    }
   }
 }

@@ -17,15 +17,3 @@
 // -- clear BOARD
 // - if not met && board NOT full
 // -- carry on with the game (how?)
-
-function setGameBoard() {
-
-}
-
-function takeTurn(gameTile) {
-  //player chooses a tile, a key in Game.BOARD
-  
-  //that tile changes to their token
-  //that tile is deactivated
-  //toggle to other player, so the next time it places a different token
-}

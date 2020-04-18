@@ -6,10 +6,10 @@ class Player {
   }
 
   saveWinsToStorage() {
-  //stringify wins array and put it into local storage
+  localStorage.setItem("wins", JSON.stringify(this.wins));
   }
 
   retrieveWinsFromStorage() {
-  //remove wins array from storage and parse
+  localStorage.removeItem("wins");
   }
 }
