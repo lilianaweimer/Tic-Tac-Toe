@@ -17,13 +17,16 @@ class Game {
   }
 
   changePlayerTurn() {
-    console.log("before", this.currentPlayer);
     if (this.currentPlayer === this.playerOne) {
       this.currentPlayer = this.playerTwo;
     } else {
       this.currentPlayer = this.playerOne;
     }
-    console.log("after", this.currentPlayer);
+  }
+
+  changeGameboardTile(tile) {
+    this.gameboard[tile] = this.currentPlayer.id;
+    console.log(this.gameboard);
   }
 
   checkWinConditions() {

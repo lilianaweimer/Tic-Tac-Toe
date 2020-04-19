@@ -14,8 +14,10 @@ board.addEventListener("click", takeTurn);
 
 function takeTurn() {
   if (event.target.className = ".gameboard-tile" && event.target.src === "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"){
+    var tile = event.target.getAttribute("data-id");
     event.target.closest(".gameboard-tile");
     event.target.src = newGame.currentPlayer.token;
+    newGame.changeGameboardTile(tile);
     newGame.checkWinConditions();
     newGame.changePlayerTurn();
   }
