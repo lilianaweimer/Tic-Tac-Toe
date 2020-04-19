@@ -33,29 +33,14 @@ var playerTwo = new Player(10, "fly");
 var newGame = new Game(playerOne, playerTwo);
 
 function testFunction() {
-  newGame.checkWinConditions();
+
 }
 
 function takeTurn() {
-  var board = newGame.gameboard;
-  var winConditions = [
-    (board.A1 + board.A2 + board.A3),
-    (board.B1 + board.B2 + board.B3),
-    (board.C1 + board.C2 + board.C3),
-    (board.A1 + board.B1 + board.C1),
-    (board.A2 + board.B2 + board.C2),
-    (board.A3 + board.B3 + board.C3),
-    (board.A1 + board.B2 + board.C3),
-    (board.A3 + board.B2 + board.C1)
-  ];
-
-  for (var i = 0; i < winConditions.length; i++) {
-    if (winConditions[i] === 3) {
-      return 'Player One Wins!';
-    } else if (winConditions[i] === 30) {
-      return 'Player Two Wins!';
-    }
-  }
+  //change game tile
+  newGame.changePlayerTurn();
+  newGame.checkWinConditions();
+  return newGame.detectDraw();
 }
 
 function startNewRound() {

@@ -6,16 +6,6 @@
 // A way to detect when a game is a draw (no one has won)
 // A way to save a winning Game’s board data to the correct player’s wins array
 // A way to reset the Game’s board to begin a new game
-// var winConditions = [
-//   (board.A1 + boardA2 + board.A3),
-//   (board.B1 + boardB2 + board.B3),
-//   (board.C1 + boardC2 + board.C3),
-//   (board.A1 + board.B1 + board.C1),
-//   (board.A2 + board.B2 + board.C2),
-//   (board.A3 + board.B3 + board.C3),
-//   (board.A1 + board.B2 + board.C3),
-//   (board.A3 + board.B2 + board.C1)
-// ];
 
 class Game {
   constructor(playerOne, playerTwo) {
@@ -32,6 +22,13 @@ class Game {
     };
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
+    this.playerOneTurn = true;
+    this.playerTwoTurn = false;
+  }
+
+  changePlayerTurn() {
+    this.playerOneTurn = (this.playerOneTurn === true) ? false : true;
+    this.playerTwoTurn = (this.playerTwoTurn === true) ? false : true;
   }
 
   checkWinConditions() {
@@ -49,22 +46,22 @@ class Game {
 
     for (var i = 0; i < winConditions.length; i++) {
       if (winConditions[i] === 3) {
-        return 'Player One Wins!';
-      } else if (winConditions[i] === 6) {
-        return 'Player Two Wins!';
+        return "Player One Wins!";
+      } else if (winConditions[i] === 30) {
+        return "Player Two Wins!";
       }
     }
   }
 
   detectDraw() {
-    //if all tiles are full
-    for 
-    // for (var i = 0; i < winConditions.length; i++) {
-    //   if (winConditions[i] === 0)
-    // }
-    //do not modify scores
-    //change head text to "draw!"
-    //reset the board
+    var gameboardLayout = Object.values(this.gameboard);
+    for (var i = 0; i < gameboardLayout.length; i++) {
+        if (gameboardLayout[i] === 0) {
+          break;
+        } else {
+          return "It's a draw!"
+        }
+    }
   }
 
   saveWinningBoard() {
