@@ -37,9 +37,11 @@ class Game {
 
     for (var i = 0; i < winConditions.length; i++) {
       if (winConditions[i] === 3) {
+        this.playerOne.wins.push(board);
         // this.saveWinningBoard(playerOne);
         return "Player One Wins!";
       } else if (winConditions[i] === 30) {
+        this.playerTwo.wins.push(board);
         // this.saveWinningBoard(playerTwo);
         return "Player Two Wins!";
       } else {
@@ -70,8 +72,13 @@ class Game {
   // }
 
   resetGameBoard() {
-    for (var i = 0; i < this.gameboard.length; i++) {
-    board[i] = 0;
+    for (var property in this.gameboard) {
+      this.gameboard[property] = 0;
     }
+
+    // var gameboardLayout = Object.values(this.gameboard);
+    // for (var i = 0; i < gameboardLayout.length; i++) {
+    //   gameboardLayout[i] = 0;
+    // }
   }
 }
