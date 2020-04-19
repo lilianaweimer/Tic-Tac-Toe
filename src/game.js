@@ -58,7 +58,7 @@ class Game {
         this.winner = playerTwo;
         this.resetGameBoard();
       } else {
-      }
+      } this.detectDraw();
     }
   }
 
@@ -66,7 +66,7 @@ class Game {
     var board = this.gameboard;
     var wholeBoard = (board.A1 + board.A2 + board.A3 + board.B1 + board.B2 + board.B3 + board.C1 + board.C2 + board.C3);
     if (wholeBoard === 45 && this.winner === undefined) {
-      console.log("It's a draw!");
+      this.winner = "nobody";
     }
   }
 

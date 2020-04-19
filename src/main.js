@@ -34,9 +34,10 @@ function startNewTurn() {
 
 function checkForWin() {
   newGame.checkWinConditions();
-  if (newGame.winner !== undefined) {
-    console.log('winner is not undefined');
-  boardHeading.innerText = `${newGame.winner.name} won!`
+  if (newGame.winner === "nobody") {
+    boardHeading.innerText = "Draw!";
+  } else if (newGame.winner !== undefined) {
+    boardHeading.innerText = `${newGame.winner.name} won!`
   }
 }
 
