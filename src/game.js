@@ -1,56 +1,84 @@
-// A Game should include:
-// Two Player instances
-// A way to keep track of the data for the game board
-// A way to keep track of which player’s turn it currently is
-// A way to check the Game’s board data for win conditions
-// A way to detect when a game is a draw (no one has won)
-// A way to save a winning Game’s board data to the correct player’s wins array
-// A way to reset the Game’s board to begin a new game
 class Game {
-
-  createPlayerOne() {
-    return new Player("Player One", "spider");
+  constructor(playerOne, playerTwo) {
+    this.gameboard = {
+      A1: 0,
+      A2: 0,
+      A3: 0,
+      B1: 0,
+      B2: 0,
+      B3: 0,
+      C1: 0,
+      C2: 0,
+      C3: 0
+    };
+    this.playerOne = playerOne;
+    this.playerTwo = playerTwo;
+    this.playerOneTurn = true;
+    this.playerTwoTurn = false;
   }
 
-  createPlayerTwo() {
-    return new Player("Player Two", "fly");
-  }
-
-  currentGameBoard??????????() {
-
+  changePlayerTurn() {
+    this.playerOneTurn = (this.playerOneTurn === true) ? false : true;
+    this.playerTwoTurn = (this.playerTwoTurn === true) ? false : true;
   }
 
   checkWinConditions() {
-    //if there is a row, column, or diagonal that all are the same token
-    //then that player wins--so update their win count
-    //and reset the board
+    var board = this.gameboard;
+    var winConditions = [
+      (board.A1 + board.A2 + board.A3),
+      (board.B1 + board.B2 + board.B3),
+      (board.C1 + board.C2 + board.C3),
+      (board.A1 + board.B1 + board.C1),
+      (board.A2 + board.B2 + board.C2),
+      (board.A3 + board.B3 + board.C3),
+      (board.A1 + board.B2 + board.C3),
+      (board.A3 + board.B2 + board.C1)
+    ];
+
+    for (var i = 0; i < winConditions.length; i++) {
+      if (winConditions[i] === 3) {
+        this.playerOne.wins.push(board);
+        // this.saveWinningBoard(playerOne);
+        return "Player One Wins!";
+      } else if (winConditions[i] === 30) {
+        this.playerTwo.wins.push(board);
+        // this.saveWinningBoard(playerTwo);
+        return "Player Two Wins!";
+      } else {
+        return this.detectDraw();
+      }
+    }
   }
 
   detectDraw() {
-    //if all tiles are full
-    //do not modify scores
-    //change head text to "draw!"
-    //reset the board
+    var gameboardLayout = Object.values(this.gameboard);
+    for (var i = 0; i < gameboardLayout.length; i++) {
+        if (gameboardLayout[i] === 0) {
+          break;
+        } else {
+          return "It's a draw!"
+        }
+    }
   }
 
-  saveWinningBoard() {
-    //if a player has won
-    //take the current board data--local storage?
-    //put it into their winning board array
-    //and add it to local storage
-  }
+  // saveWinningBoard(winningPlayer) {
+  //   //if a player has won
+  //   winningPlayer.wins.push(this.gameboard);
+  //
+  //   localStorage.setItem(winningPlayer.wins, JSON.stringify(this.gameboard));
+  //   //take the current board data--local storage?
+  //   //put it into their winning board array
+  //   //and add it to local storage
+  // }
 
   resetGameBoard() {
-    this.board = {
-      A1: null,
-      A2: null,
-      A2: null,
-      B1: null,
-      B2: null,
-      B3: null,
-      C1: null,
-      C2: null,
-      C3: null
+    for (var property in this.gameboard) {
+      this.gameboard[property] = 0;
     }
+
+    // var gameboardLayout = Object.values(this.gameboard);
+    // for (var i = 0; i < gameboardLayout.length; i++) {
+    //   gameboardLayout[i] = 0;
+    // }
   }
 }
