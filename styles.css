@@ -60,7 +60,7 @@ h2 {
   grid-area: gameboard-head;
 }
 
-img.gameboard-tile {
+div.gameboard-tile-div {
   height: 100px;
   width: auto;
   border: 2px solid black;
