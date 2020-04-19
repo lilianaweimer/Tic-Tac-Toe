@@ -39,8 +39,8 @@ function testFunction() {
 function takeTurn() {
   //change game tile
   newGame.changePlayerTurn();
-  newGame.checkWinConditions();
-  return newGame.detectDraw();
+  return newGame.checkWinConditions();
+
 }
 
 function startNewRound() {

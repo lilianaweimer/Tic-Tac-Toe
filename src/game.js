@@ -49,6 +49,8 @@ class Game {
         return "Player One Wins!";
       } else if (winConditions[i] === 30) {
         return "Player Two Wins!";
+      } else {
+        return this.detectDraw();
       }
     }
   }
@@ -72,8 +74,8 @@ class Game {
   }
 
   resetGameBoard() {
-  for (var i = 0; i < this.gameboard.length; i++) {
+    for (var i = 0; i < this.gameboard.length; i++) {
     board[i] = 0;
-  }
+    }
   }
 }
