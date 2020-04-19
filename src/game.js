@@ -13,13 +13,17 @@ class Game {
     };
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
-    this.playerOneTurn = true;
-    this.playerTwoTurn = false;
+    this.currentPlayer = playerOne;
   }
 
   changePlayerTurn() {
-    this.playerOneTurn = (this.playerOneTurn === true) ? false : true;
-    this.playerTwoTurn = (this.playerTwoTurn === true) ? false : true;
+    console.log("before", this.currentPlayer);
+    if (this.currentPlayer === this.playerOne) {
+      this.currentPlayer = this.playerTwo;
+    } else {
+      this.currentPlayer = this.playerOne;
+    }
+    console.log("after", this.currentPlayer);
   }
 
   checkWinConditions() {
