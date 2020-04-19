@@ -1,12 +1,3 @@
-// A Game should include:
-// Two Player instances
-// A way to keep track of the data for the game board
-// A way to keep track of which player’s turn it currently is
-// A way to check the Game’s board data for win conditions
-// A way to detect when a game is a draw (no one has won)
-// A way to save a winning Game’s board data to the correct player’s wins array
-// A way to reset the Game’s board to begin a new game
-
 class Game {
   constructor(playerOne, playerTwo) {
     this.gameboard = {
@@ -46,8 +37,10 @@ class Game {
 
     for (var i = 0; i < winConditions.length; i++) {
       if (winConditions[i] === 3) {
+        // this.saveWinningBoard(playerOne);
         return "Player One Wins!";
       } else if (winConditions[i] === 30) {
+        // this.saveWinningBoard(playerTwo);
         return "Player Two Wins!";
       } else {
         return this.detectDraw();
@@ -66,12 +59,15 @@ class Game {
     }
   }
 
-  saveWinningBoard() {
-    //if a player has won
-    //take the current board data--local storage?
-    //put it into their winning board array
-    //and add it to local storage
-  }
+  // saveWinningBoard(winningPlayer) {
+  //   //if a player has won
+  //   winningPlayer.wins.push(this.gameboard);
+  //
+  //   localStorage.setItem(winningPlayer.wins, JSON.stringify(this.gameboard));
+  //   //take the current board data--local storage?
+  //   //put it into their winning board array
+  //   //and add it to local storage
+  // }
 
   resetGameBoard() {
     for (var i = 0; i < this.gameboard.length; i++) {
