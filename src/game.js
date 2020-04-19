@@ -6,33 +6,53 @@
 // A way to detect when a game is a draw (no one has won)
 // A way to save a winning Game’s board data to the correct player’s wins array
 // A way to reset the Game’s board to begin a new game
+var winConditions = [
+  (board.A1 + boardA2 + board.A3),
+  (board.B1 + boardB2 + board.B3),
+  (board.C1 + boardC2 + board.C3),
+  (board.A1 + board.B1 + board.C1),
+  (board.A2 + board.B2 + board.C2),
+  (board.A3 + board.B3 + board.C3),
+  (board.A1 + board.B2 + board.C3),
+  (board.A3 + board.B2 + board.C1)
+];
 
 class Game {
   constructor(playerOne, playerTwo) {
     this.gameboard = {
-      A1: null,
-      A2: null,
-      A2: null,
-      B1: null,
-      B2: null,
-      B3: null,
-      C1: null,
-      C2: null,
-      C3: null
+      A1: 0,
+      A2: 0,
+      A2: 0,
+      B1: 0,
+      B2: 0,
+      B3: 0,
+      C1: 0,
+      C2: 0,
+      C3: 0
     };
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
   }
 
   checkWinConditions() {
-    //if there is a row, column, or diagonal that all are the same token
-    return this.players;
-    //then that player wins--so update their win count
-    //and reset the board
+    var board = this.gameboard;
+    var winConditions = [
+      (board.A1 + boardA2 + board.A3),
+      (board.B1 + boardB2 + board.B3),
+      (board.C1 + boardC2 + board.C3),
+      (board.A1 + board.B1 + board.C1),
+      (board.A2 + board.B2 + board.C2),
+      (board.A3 + board.B3 + board.C3),
+      (board.A1 + board.B2 + board.C3),
+      (board.A3 + board.B2 + board.C1)
+    ];
   }
 
   detectDraw() {
     //if all tiles are full
+    for (var i = 0; i < this.gameboard.length; i++) {
+
+    }
     //do not modify scores
     //change head text to "draw!"
     //reset the board
@@ -46,16 +66,8 @@ class Game {
   }
 
   resetGameBoard() {
-    this.board = {
-      A1: null,
-      A2: null,
-      A2: null,
-      B1: null,
-      B2: null,
-      B3: null,
-      C1: null,
-      C2: null,
-      C3: null
-    }
+  for (var i = 0; i < this.gameboard.length; i++) {
+    board[i] = 0;
+  }
   }
 }
