@@ -19,6 +19,45 @@ h2 {
   color: #353D2F;
 }
 
+/* GAMEBOARD SECTION RULES */
+.game-board-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #F4FEC1;
+}
+
+.gameboard-header {
+  grid-area: gameboard-head;
+}
+
+img.gameboard-tile,
+img.gameboard-tile-div {
+  height: 100px;
+  width: auto;
+  border: 3px solid black;
+}
+
+div.gameboard-tile-div {
+  height: 100px;
+  width: auto;
+  border: 3px solid black;
+}
+
+.gameboard {
+  background-image: url("https://cdn.pixabay.com/photo/2013/07/12/16/37/cobweb-151265_640.png");
+  background-size: 600px auto;
+  background-position: center;
+  grid-area: gameboard;
+  align-self: center;
+  display: grid;
+  grid-template-rows: 105px 105px 105px;
+  grid-template-columns: 105px 105px 105px;
+  place-items: center / center;
+  place-content: center / center;
+  background-color: #F4FEC1;
+  border: none;
+}
+
 /* PLAYER SECTION RULES */
 .player-section {
   display: flex;
@@ -50,52 +89,14 @@ h2 {
   margin: 3px;
 }
 
-/* GAMEBOARD SECTION RULES */
-.game-board-section {
-  display: flex;
-  flex-direction: column;
-  background-color: #F4FEC1;
-}
-
-.gameboard-header {
-  grid-area: gameboard-head;
-}
-
-img.gameboard-tile,
-img.gameboard-tile-div {
-  height: 100px;
-  width: auto;
-  border: 2px solid black;
-}
-
-div.gameboard-tile-div {
-  height: 100px;
-  width: auto;
-  border: 2px solid black;
-}
-
-.gameboard {
-  background-image: url("https://cdn.pixabay.com/photo/2013/07/12/16/37/cobweb-151265_640.png");
-  background-size: 600px auto;
-  background-position: center;
-  grid-area: gameboard;
-  align-self: center;
-  display: grid;
-  grid-template-rows: 100px 100px 100px;
-  grid-template-columns: 100px 100px 100px;
-  place-items: center / center;
-  place-content: center / center;
-  background-color: #F4FEC1;
-  border: none;
-}
-
 /* IMAGE RULES */
 img.player-image {
   height: 75px;
   width: auto;
 }
 
-img.mini-gameboard-tile {
+div.mini-gameboard-tile {
   height: 20px;
   width: auto;
+  border: 1px solid black;
 }

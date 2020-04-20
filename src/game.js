@@ -63,7 +63,8 @@ class Game {
     var board = this.gameboard;
     var wholeBoard = (board.A1.num + board.A2.num + board.A3.num + board.B1.num + board.B2.num + board.B3.num + board.C1.num + board.C2.num + board.C3.num);
     if (wholeBoard === 45 && this.winner === undefined) {
-      this.winner = "nobody";
+      this.winner = null;
+      this.resetGameBoard();
     }
   }
 
