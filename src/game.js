@@ -14,7 +14,6 @@ class Game {
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
     this.currentPlayer = playerOne;
-    this.defaultCobweb = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png";
     this.winner = undefined;
   }
 

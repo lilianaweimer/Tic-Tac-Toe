@@ -8,13 +8,11 @@ var board = document.querySelector(".gameboard");
 var gameTile = document.querySelector(".gameboard-tile");
 
 //EVENT LISTENERS
-board.addEventListener("click", function() {
-  takeTurn(event)
-  startNewGame(event)});
+board.addEventListener("click", takeTurn);
 
 //EVENT HANDLERS
 function takeTurn() {
-  if (event.target.className = ".gameboard-tile" && event.target.src === newGame.defaultCobweb){
+  if (event.target.className = ".gameboard-tile" && event.target.src === "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"){
     console.log(event.target);
     var tile = event.target.getAttribute("data-id");
     event.target.closest(".gameboard-tile");
@@ -36,11 +34,17 @@ function checkForWin() {
   newGame.checkWinConditions();
   if (newGame.winner === "nobody") {
     boardHeading.innerText = "Draw!";
+    startNewRound();
   } else if (newGame.winner !== undefined) {
     boardHeading.innerText = `${newGame.winner.name} won!`
+    displayWins(newGame.winner);
+    startNewRound();
   }
 }
 
-function startNewGame() {
+function startNewRound() {
+}
 
+function displayWins(winner) {
+  
 }

@@ -31,7 +31,8 @@ h2 {
   background-color: #D9F9A5;
 }
 
-.player-wins-grid {
+.player-one-wins-grid,
+.player-two-wins-grid {
   grid-area: wins-grid;
   display: flex;
   flex-wrap: wrap;
