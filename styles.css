@@ -62,14 +62,22 @@ h2 {
 }
 
 img.gameboard-tile,
-img.true,
-img.false {
+img.gameboard-tile-div {
+  height: 100px;
+  width: auto;
+  border: 2px solid black;
+}
+
+div.gameboard-tile-div {
   height: 100px;
   width: auto;
   border: 2px solid black;
 }
 
 .gameboard {
+  background-image: url("https://cdn.pixabay.com/photo/2013/07/12/16/37/cobweb-151265_640.png");
+  background-size: 600px auto;
+  background-position: center;
   grid-area: gameboard;
   align-self: center;
   display: grid;
