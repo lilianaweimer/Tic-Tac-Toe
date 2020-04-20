@@ -27,7 +27,6 @@ class Game {
 
   changeGameboardTile(tile) {
     this.gameboard[tile] = this.currentPlayer.id;
-    console.log(this.gameboard);
   }
 
   checkWinConditions() {
@@ -47,13 +46,11 @@ class Game {
       if (winConditions[i] === 3) {
         this.playerOne.wins.push(board);
         // this.saveWinningBoard(playerOne);
-        console.log("Player One Wins!");
         this.winner = playerOne;
         this.resetGameBoard();
       } else if (winConditions[i] === 30) {
         this.playerTwo.wins.push(board);
         // this.saveWinningBoard(playerTwo);
-        console.log("Player Two Wins!");
         this.winner = playerTwo;
         this.resetGameBoard();
       } else {
