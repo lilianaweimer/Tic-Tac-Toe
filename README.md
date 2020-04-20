@@ -41,5 +41,7 @@ This is the final project from the Turing School for Software and Design's Mod 1
 ## Challenges:
 - Conceptualizing how to start with the data model rather than the DOM
 - The `checkWinConditions` method held me up for an entire day
+- Connecting classes to the DOM
+- Breaking the project down into manageable chunks
 
 ## In Action:
