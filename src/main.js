@@ -63,28 +63,33 @@ function startNewRound() {
 }
 
 function displayWin() {
-  for (objects in newGame.winner.wins) {
-
-  }
-  if (newGame.winner === playerOne) {
-    playerOneWins.innerText = "";
-    for (var i = 0; i < playerOne.wins.length; i++) {
-      var miniBoard = `
-        <section class="mini-gameboard">
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-          <div class="mini-gameboard-tile-div"></div>
-        </section>
-        `;
-      playerOneWins.insertAdjacentHTML("beforeend", miniBoard);
+  for (var i = 0; i < playerOne.wins.length; i++) {
+    console.log(playerOne.wins[i].values);
+      }
     }
-  }
+  // if (newGame.winner === playerOne) {
+  //   playerOneWins.innerText = "";
+
+
+
+
+
+    //   var miniBoard = `
+    //     <section class="miniboard">
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //       <div class="mini-gameboard-tile-div"></div>
+    //     </section>
+    //     `;
+    //   playerOneWins.insertAdjacentHTML("beforeend", miniBoard);
+    // }
+
   // if (newGame.winner === playerOne) {
   //   for (var i = 0; i < newGame.playerOne.wins.length; i++) {
   //     console.log(newGame.playerOne.wins);
@@ -93,7 +98,7 @@ function displayWin() {
   //       `;
   //   }
   // }
-}
+// }
 // <img src=`${newGame.winner.wins[i].id}` class="mini-gameboard-tile" id="A1" alt="game board tile"/>
 // <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png" class="mini-gameboard-tile" id="A2" alt="game board tile"/>
 // <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png" class="mini-gameboard-tile" id="A3" alt="game board tile"/>
