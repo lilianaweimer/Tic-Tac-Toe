@@ -31,7 +31,8 @@ h2 {
   background-color: #D9F9A5;
 }
 
-.player-wins-grid {
+.player-one-wins-grid,
+.player-two-wins-grid {
   grid-area: wins-grid;
   display: flex;
   flex-wrap: wrap;
@@ -60,7 +61,9 @@ h2 {
   grid-area: gameboard-head;
 }
 
-img.gameboard-tile {
+img.gameboard-tile,
+img.true,
+img.false {
   height: 100px;
   width: auto;
   border: 2px solid black;

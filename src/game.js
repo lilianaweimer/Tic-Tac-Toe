@@ -13,13 +13,21 @@ class Game {
     };
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
-    this.playerOneTurn = true;
-    this.playerTwoTurn = false;
+    this.currentPlayer = playerOne;
+    this.winner = undefined;
   }
 
   changePlayerTurn() {
-    this.playerOneTurn = (this.playerOneTurn === true) ? false : true;
-    this.playerTwoTurn = (this.playerTwoTurn === true) ? false : true;
+    if (this.currentPlayer === this.playerOne) {
+      this.currentPlayer = this.playerTwo;
+    } else {
+      this.currentPlayer = this.playerOne;
+    }
+  }
+
+  changeGameboardTile(tile) {
+    this.gameboard[tile] = this.currentPlayer.id;
+    console.log(this.gameboard);
   }
 
   checkWinConditions() {
@@ -39,25 +47,25 @@ class Game {
       if (winConditions[i] === 3) {
         this.playerOne.wins.push(board);
         // this.saveWinningBoard(playerOne);
-        return "Player One Wins!";
+        console.log("Player One Wins!");
+        this.winner = playerOne;
+        this.resetGameBoard();
       } else if (winConditions[i] === 30) {
         this.playerTwo.wins.push(board);
         // this.saveWinningBoard(playerTwo);
-        return "Player Two Wins!";
+        console.log("Player Two Wins!");
+        this.winner = playerTwo;
+        this.resetGameBoard();
       } else {
-        return this.detectDraw();
-      }
+      } this.detectDraw();
     }
   }
 
   detectDraw() {
-    var gameboardLayout = Object.values(this.gameboard);
-    for (var i = 0; i < gameboardLayout.length; i++) {
-        if (gameboardLayout[i] === 0) {
-          break;
-        } else {
-          return "It's a draw!"
-        }
+    var board = this.gameboard;
+    var wholeBoard = (board.A1 + board.A2 + board.A3 + board.B1 + board.B2 + board.B3 + board.C1 + board.C2 + board.C3);
+    if (wholeBoard === 45 && this.winner === undefined) {
+      this.winner = "nobody";
     }
   }
 
@@ -72,13 +80,18 @@ class Game {
   // }
 
   resetGameBoard() {
-    for (var property in this.gameboard) {
-      this.gameboard[property] = 0;
+    if (this.winner !== undefined) {
+      this.gameboard = {
+        A1: 0,
+        A2: 0,
+        A3: 0,
+        B1: 0,
+        B2: 0,
+        B3: 0,
+        C1: 0,
+        C2: 0,
+        C3: 0
+      };
     }
-
-    // var gameboardLayout = Object.values(this.gameboard);
-    // for (var i = 0; i < gameboardLayout.length; i++) {
-    //   gameboardLayout[i] = 0;
-    // }
   }
 }
