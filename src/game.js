@@ -1,16 +1,16 @@
 class Game {
   constructor(playerOne, playerTwo) {
-    this.gameboard = {
-      A1: {num: 0, player: undefined},
-      A2: {num: 0, player: undefined},
-      A3: {num: 0, player: undefined},
-      B1: {num: 0, player: undefined},
-      B2: {num: 0, player: undefined},
-      B3: {num: 0, player: undefined},
-      C1: {num: 0, player: undefined},
-      C2: {num: 0, player: undefined},
-      C3: {num: 0, player: undefined}
-    };
+    this.gameboard = [
+      {num: 0, player: undefined},
+      {num: 0, player: undefined},
+      {num: 0, player: undefined},
+      {num: 0, player: undefined},
+      {num: 0, player: undefined},
+      {num: 0, player: undefined},
+      {num: 0, player: undefined},
+      {num: 0, player: undefined},
+      {num: 0, player: undefined}
+    ];
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
     this.currentPlayer = playerOne;
@@ -33,14 +33,14 @@ class Game {
   checkWinConditions() {
     var board = this.gameboard;
     var winConditions = [
-      (board.A1.num + board.A2.num + board.A3.num),
-      (board.B1.num + board.B2.num + board.B3.num),
-      (board.C1.num + board.C2.num + board.C3.num),
-      (board.A1.num + board.B1.num + board.C1.num),
-      (board.A2.num + board.B2.num + board.C2.num),
-      (board.A3.num + board.B3.num + board.C3.num),
-      (board.A1.num + board.B2.num + board.C3.num),
-      (board.A3.num + board.B2.num + board.C1.num)
+      (board[0].num + board[1].num + board[2].num),
+      (board[3].num + board[4].num + board[5].num),
+      (board[6].num + board[7].num + board[8].num),
+      (board[0].num + board[3].num + board[6].num),
+      (board[1].num + board[4].num + board[7].num),
+      (board[2].num + board[5].num + board[8].num),
+      (board[0].num + board[4].num + board[8].num),
+      (board[2].num + board[4].num + board[6].num)
     ];
 
     for (var i = 0; i < winConditions.length; i++) {
@@ -61,7 +61,7 @@ class Game {
 
   detectDraw() {
     var board = this.gameboard;
-    var wholeBoard = (board.A1.num + board.A2.num + board.A3.num + board.B1.num + board.B2.num + board.B3.num + board.C1.num + board.C2.num + board.C3.num);
+    var wholeBoard = (board[0].num + board[1].num + board[2].num + board[3].num + board[4].num + board[5].num + board[6].num + board[7].num + board[8].num);
     if (wholeBoard === 45 && this.winner === undefined) {
       this.winner = null;
       this.resetGameBoard();
@@ -80,17 +80,17 @@ class Game {
 
   resetGameBoard() {
     if (this.winner !== undefined) {
-      this.gameboard = {
-        A1: {num: 0, player: undefined},
-        A2: {num: 0, player: undefined},
-        A3: {num: 0, player: undefined},
-        B1: {num: 0, player: undefined},
-        B2: {num: 0, player: undefined},
-        B3: {num: 0, player: undefined},
-        C1: {num: 0, player: undefined},
-        C2: {num: 0, player: undefined},
-        C3: {num: 0, player: undefined}
-      };
+      this.gameboard = [
+        {num: 0, player: undefined},
+        {num: 0, player: undefined},
+        {num: 0, player: undefined},
+        {num: 0, player: undefined},
+        {num: 0, player: undefined},
+        {num: 0, player: undefined},
+        {num: 0, player: undefined},
+        {num: 0, player: undefined},
+        {num: 0, player: undefined}
+      ];
     }
   }
 }

@@ -64,7 +64,7 @@ function startNewRound() {
 
 function displayWin() {
   for (var i = 0; i < playerOne.wins.length; i++) {
-    console.log(playerOne.wins[i].values);
+    console.log(playerOne.wins[i].player);
       }
     }
   // if (newGame.winner === playerOne) {
