@@ -65,27 +65,25 @@ function startNewRound() {
 function displayWin() {
   for (var i = 0; i < newGame.winner.wins.length; i++) {
     var win = newGame.winner.wins[i];
-    if (win[i].player === undefined) {
-      win[i].player = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png";
-    }
+    // if (win[i].player === undefined) {
+    //   win[i].player = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png";
+    // }
       var miniBoard = `
         <section class="miniboard">
-          <div class="mini-gameboard-tile-div"><img src="${win[0].player}" class="mini-gameboard-tile" id="A1" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[1].player}" class="mini-gameboard-tile" id="A2" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[2].player}" class="mini-gameboard-tile" id="A3" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[3].player}" class="mini-gameboard-tile" id="B1" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[4].player}" class="mini-gameboard-tile" id="B2" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[5].player}" class="mini-gameboard-tile" id="B3" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[6].player}" class="mini-gameboard-tile" id="C1" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[7].player}" class="mini-gameboard-tile" id="C2" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[8].player}" class="mini-gameboard-tile" id="C3" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[0].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A1" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[1].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A2" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[2].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A3" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[3].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B1" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[4].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B2" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[5].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B3" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[6].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C1" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[7].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C2" alt="game board tile"/></div>
+          <div class="mini-gameboard-tile-div"><img src="${win[8].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C3" alt="game board tile"/></div>
         </section>
       `;
       if (newGame.winner === playerOne) {
-        playerOneWins.innerText = "";
         playerOneWins.insertAdjacentHTML("beforeend", miniBoard);
     } else if (newGame.winner === playerTwo) {
-      playerTwoWins.innerText = "";
       playerTwoWins.insertAdjacentHTML("beforeend", miniBoard);
     }
   }
