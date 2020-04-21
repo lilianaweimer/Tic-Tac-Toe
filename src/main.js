@@ -10,25 +10,17 @@ window.onload = displaySavedBoards();
 
 
 function takeTurn() {
-  if (newGame.winner === "nobody" || newGame.winner === playerOne || newGame.winner === playerTwo) {
+  if (newGame.winner !== undefined) {
     startNewRound();
     startNewTurn();
   } else if (event.target.className = "gameboard-tile") {
     var tile = event.target.getAttribute("data-id");
-    event.target.closest("gameboard-tile");
     event.target.innerHTML = `
       <img src=${newGame.currentPlayer.token} class="gameboard-tile" alt=${newGame.currentPlayer.name}/>
     `;
     newGame.changeGameboardTile(tile);
     checkForWin();
     startNewTurn();
-  }
-}
-
-function startNewTurn() {
-  newGame.changePlayerTurn();
-  if (newGame.winner === undefined) {
-  boardHeading.innerText = `${newGame.currentPlayer.name}'s turn`;
   }
 }
 
@@ -40,6 +32,13 @@ function checkForWin() {
     boardHeading.innerText = `${newGame.winner.name} won!`
     displayWin();
     updateWinCount();
+  }
+}
+
+function startNewTurn() {
+  newGame.changePlayerTurn();
+  if (newGame.winner === undefined) {
+  boardHeading.innerText = `${newGame.currentPlayer.name}'s turn`;
   }
 }
 
@@ -59,6 +58,13 @@ function startNewRound() {
   `;
 }
 
+function updateWinCount() {
+  var oneWinCount = document.querySelector(".player-one-win-count");
+  var twoWinCount = document.querySelector(".player-two-win-count");
+  oneWinCount.innerText = `${playerOne.wins.length} wins`;
+  twoWinCount.innerText = `${playerTwo.wins.length} wins`;
+}
+
 function displayWin() {
   if (newGame.winner === playerOne) {
     var playerWins = document.getElementById("player-one-wins-grid");
@@ -70,10 +76,12 @@ function displayWin() {
 }
 
 function displaySavedBoards() {
-  if (window.localStorage.length > 0) {
+  if (localStorage.getItem('Spider wins') !== null) {
     playerOne.retrieveWinsFromStorage();
     var playerOneWins = document.getElementById("player-one-wins-grid");
     displayAllMiniBoards(playerOne, playerOneWins);
+  }
+  if (localStorage.getItem('Fly wins') !== null) {
     playerTwo.retrieveWinsFromStorage();
     var playerTwoWins = document.getElementById("player-two-wins-grid");
     displayAllMiniBoards(playerTwo, playerTwoWins);
@@ -100,14 +108,5 @@ function displayAllMiniBoards(player, playerWins) {
         playerWins.insertAdjacentHTML("beforeend", miniBoard);
         updateWinCount();
     }
-  } else {
-    takeTurn();
   }
-}
-
-function updateWinCount() {
-  var oneWinCount = document.querySelector(".player-one-win-count");
-  var twoWinCount = document.querySelector(".player-two-win-count");
-  oneWinCount.innerText = `${playerOne.wins.length} wins`;
-  twoWinCount.innerText = `${playerTwo.wins.length} wins`;
 }

@@ -77,6 +77,7 @@ img.player-image {
 #player-two-wins-grid {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   height: 410px;
   overflow-y: scroll;
   padding: 30px;
