@@ -98,6 +98,7 @@ function displayAllMiniBoards(player, playerWins) {
         </section>
       `;
       playerWins.insertAdjacentHTML("beforeend", miniBoard);
+      updateWinCount();
   }
 }
 
