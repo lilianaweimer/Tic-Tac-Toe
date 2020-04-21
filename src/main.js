@@ -61,8 +61,12 @@ function startNewRound() {
 }
 
 function displayWin() {
-  var playerOneWins = document.getElementById("player-one-wins-grid")
-  var playerTwoWins = document.getElementById("player-two-wins-grid");
+  if (newGame.winner === playerOne) {
+    var playerWins = document.getElementById("player-one-wins-grid");
+  } else if (newGame.winner === playerTwo) {
+    var playerWins = document.getElementById("player-two-wins-grid");
+  }
+  playerWins.innerText = "";
   for (var i = 0; i < newGame.winner.wins.length; i++) {
     var win = newGame.winner.wins[i];
       var miniBoard = `
@@ -78,11 +82,7 @@ function displayWin() {
           <div class="mini-gameboard-tile-div"><img src="${win[8].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C3" alt="game board tile"/></div>
         </section>
       `;
-      if (newGame.winner === playerOne) {
-        playerOneWins.insertAdjacentHTML("beforeend", miniBoard);
-    } else if (newGame.winner === playerTwo) {
-      playerTwoWins.insertAdjacentHTML("beforeend", miniBoard);
-    }
+      playerWins.insertAdjacentHTML("beforeend", miniBoard);
   }
 }
 
