@@ -46,12 +46,12 @@ class Game {
     for (var i = 0; i < winConditions.length; i++) {
       if (winConditions[i] === 3) {
         this.playerOne.wins.push(board);
-        // this.saveWinningBoard(playerOne);
+        this.saveWinningBoard(playerOne);
         this.winner = playerOne;
         this.resetGameBoard();
       } else if (winConditions[i] === 30) {
         this.playerTwo.wins.push(board);
-        // this.saveWinningBoard(playerTwo);
+        this.saveWinningBoard(playerTwo);
         this.winner = playerTwo;
         this.resetGameBoard();
       } else {
@@ -68,15 +68,9 @@ class Game {
     }
   }
 
-  // saveWinningBoard(winningPlayer) {
-  //   //if a player has won
-  //   winningPlayer.wins.push(this.gameboard);
-  //
-  //   localStorage.setItem(winningPlayer.wins, JSON.stringify(this.gameboard));
-  //   //take the current board data--local storage?
-  //   //put it into their winning board array
-  //   //and add it to local storage
-  // }
+  saveWinningBoard(winningPlayer) {
+    winningPlayer.saveWinsToStorage();
+  }
 
   resetGameBoard() {
     if (this.winner !== undefined) {
