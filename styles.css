@@ -1,4 +1,5 @@
 /* GLOBAL RULES */
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap');
 
 body {
   height: 100vh;
@@ -10,12 +11,12 @@ body {
     "wins-grid gameboard gameboard wins-grid"
     "wins-grid gameboard gameboard wins-grid"
     "wins-grid . . wins-grid";
-  background-color: #F4FEC1;
   text-align: center;
+  border: 1px solid #003D1A;
 }
 
 h2 {
-  font-family: sans-serif;
+  font-family: 'Beth Ellen', cursive;
   color: #353D2F;
 }
 
@@ -24,10 +25,14 @@ h2 {
   display: flex;
   flex-direction: column;
   background-color: #F4FEC1;
+  border-right: 1px solid #003D1A;
+  border-left: 1px solid #003D1A;
 }
 
 .gameboard-header {
   grid-area: gameboard-head;
+  font-size: 30px;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 img.gameboard-tile,
@@ -54,7 +59,6 @@ div.gameboard-tile-div {
   grid-template-columns: 105px 105px 105px;
   place-items: center / center;
   place-content: center / center;
-  background-color: #F4FEC1;
   border: none;
 }
 
@@ -63,6 +67,7 @@ div.gameboard-tile-div {
   display: flex;
   flex-direction: column;
   background-color: #D9F9A5;
+  padding: 10px;
 }
 
 .win-count {
@@ -79,13 +84,11 @@ div.gameboard-tile-div {
 
 .miniboard {
   display: grid;
-  grid-template-rows: 20px 20px 20px;
-  grid-template-columns: 20px 20px 20px;
-  place-items: center / center;
-  place-content: center / center;
+  grid-template-rows: 25px 25px 25px;
+  grid-template-columns: 25px 25px 25px;
   grid-gap: 1px;
   background-color: #F4FEC1;
-  border: 1px solid lightslategrey;
+  border: 1px solid #003D1A;
   margin: 3px;
 }
 
@@ -97,7 +100,7 @@ img.player-image {
 }
 
 img.mini-gameboard-tile {
-  height: 20px;
+  height: 25px;
   width: auto;
-  border: 1px solid black;
+  border: 1px solid #003D1A;
 }

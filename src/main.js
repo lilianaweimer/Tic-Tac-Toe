@@ -86,15 +86,15 @@ function displayAllMiniBoards(player, playerWins) {
     var win = player.wins[i];
       var miniBoard = `
         <section class="miniboard">
-          <div class="mini-gameboard-tile-div"><img src="${win[0].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A1" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[1].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A2" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[2].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A3" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[3].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B1" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[4].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B2" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[5].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B3" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[6].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C1" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[7].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C2" alt="game board tile"/></div>
-          <div class="mini-gameboard-tile-div"><img src="${win[8].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C3" alt="game board tile"/></div>
+          <img src="${win[0].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A1" alt="game board tile"/>
+          <img src="${win[1].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A2" alt="game board tile"/>
+          <img src="${win[2].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A3" alt="game board tile"/>
+          <img src="${win[3].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B1" alt="game board tile"/>
+          <img src="${win[4].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B2" alt="game board tile"/>
+          <img src="${win[5].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="B3" alt="game board tile"/>
+          <img src="${win[6].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C1" alt="game board tile"/>
+          <img src="${win[7].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C2" alt="game board tile"/>
+          <img src="${win[8].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="C3" alt="game board tile"/>
         </section>
       `;
       playerWins.insertAdjacentHTML("beforeend", miniBoard);
