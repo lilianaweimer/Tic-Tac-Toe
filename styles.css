@@ -96,7 +96,7 @@ img.player-image {
   width: auto;
 }
 
-div.mini-gameboard-tile {
+img.mini-gameboard-tile {
   height: 20px;
   width: auto;
   border: 1px solid black;
