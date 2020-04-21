@@ -5,9 +5,6 @@ var newGame = new Game(playerOne, playerTwo);
 //QUERY SELECTORS HERE
 var boardHeading = document.querySelector(".gameboard-header-text");
 var board = document.querySelector(".gameboard");
-var gameTile = document.querySelector(".gameboard-tile");
-var playerOneWins = document.getElementById("player-one-wins-grid")
-var playerTwoWins = document.getElementById("player-two-wins-grid");
 
 //EVENT LISTENERS
 board.addEventListener("click", takeTurn);
@@ -43,6 +40,7 @@ function checkForWin() {
   } else if (newGame.winner !== undefined) {
     boardHeading.innerText = `${newGame.winner.name} won!`
     displayWin();
+    updateWinCount();
   }
 }
 
@@ -63,11 +61,10 @@ function startNewRound() {
 }
 
 function displayWin() {
+  var playerOneWins = document.getElementById("player-one-wins-grid")
+  var playerTwoWins = document.getElementById("player-two-wins-grid");
   for (var i = 0; i < newGame.winner.wins.length; i++) {
     var win = newGame.winner.wins[i];
-    // if (win[i].player === undefined) {
-    //   win[i].player = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png";
-    // }
       var miniBoard = `
         <section class="miniboard">
           <div class="mini-gameboard-tile-div"><img src="${win[0].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A1" alt="game board tile"/></div>
@@ -87,4 +84,11 @@ function displayWin() {
       playerTwoWins.insertAdjacentHTML("beforeend", miniBoard);
     }
   }
+}
+
+function updateWinCount() {
+  var oneWinCount = document.querySelector(".player-one-win-count");
+  var twoWinCount = document.querySelector(".player-two-win-count");
+  oneWinCount.innerText = `${playerOne.wins.length} wins`;
+  twoWinCount.innerText = `${playerTwo.wins.length} wins`;
 }
