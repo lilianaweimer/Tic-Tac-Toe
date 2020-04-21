@@ -43,11 +43,11 @@ div.gameboard-tile-div {
 }
 
 .gameboard {
+  grid-area: gameboard;
+  align-self: center;
   background-image: url("https://cdn.pixabay.com/photo/2013/07/12/16/37/cobweb-151265_640.png");
   background-size: 600px auto;
   background-position: center;
-  grid-area: gameboard;
-  align-self: center;
   display: grid;
   grid-template-rows: 105px 105px 105px;
   grid-template-columns: 105px 105px 105px;

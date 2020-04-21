@@ -51,6 +51,7 @@ This is the final project from the Turing School for Software and Design's Mod 1
   - When an image is double-clicked, there is an error due to its class changing and `takeTurn` calling `changeGameboardTile`
   - This error does not break the game, however
 - Refactoring occasionally broke other parts of the game, which I had to work my way through fixing (time consuming and sometimes confusing)
+- Planning document could have been written more clearly so others could understand it better
 - Fixing bugs along the way
 
 ## In Action:
