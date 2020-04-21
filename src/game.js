@@ -72,6 +72,11 @@ class Game {
     winningPlayer.saveWinsToStorage();
   }
 
+  retrieveWinningBoards() {
+    this.playerOne.retrieveWinsFromStorage();
+    this.playerTwo.retrieveWinsFromStorage();
+  }
+
   resetGameBoard() {
     if (this.winner !== undefined) {
       this.gameboard = [

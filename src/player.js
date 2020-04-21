@@ -11,6 +11,6 @@ class Player {
   }
 
   retrieveWinsFromStorage() {
-  this.wins = JSON.parse(localStorage.removeItem(`${this.name} wins`));
+  this.wins = JSON.parse(localStorage.getItem(`${this.name} wins`));
   }
 }

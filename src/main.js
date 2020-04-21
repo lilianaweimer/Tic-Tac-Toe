@@ -8,8 +8,10 @@ var board = document.querySelector(".gameboard");
 
 //EVENT LISTENERS
 board.addEventListener("click", takeTurn);
+window.onload = displaySavedBoards();
 
 //EVENT HANDLERS
+
 function takeTurn() {
   if (newGame.winner === null || newGame.winner === playerOne || newGame.winner === playerTwo) {
     startNewRound();
@@ -67,8 +69,21 @@ function displayWin() {
     var playerWins = document.getElementById("player-two-wins-grid");
   }
   playerWins.innerText = "";
-  for (var i = 0; i < newGame.winner.wins.length; i++) {
-    var win = newGame.winner.wins[i];
+  displayAllMiniBoards(newGame.winner, playerWins);
+}
+
+function displaySavedBoards() {
+  playerOne.retrieveWinsFromStorage();
+  var playerOneWins = document.getElementById("player-one-wins-grid");
+  displayAllMiniBoards(playerOne, playerOneWins);
+  playerTwo.retrieveWinsFromStorage();
+  var playerTwoWins = document.getElementById("player-two-wins-grid");
+  displayAllMiniBoards(playerTwo, playerTwoWins);
+}
+
+function displayAllMiniBoards(player, playerWins) {
+  for (var i = 0; i < player.wins.length; i++) {
+    var win = player.wins[i];
       var miniBoard = `
         <section class="miniboard">
           <div class="mini-gameboard-tile-div"><img src="${win[0].player || "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/spider-web_1f578.png"}" class="mini-gameboard-tile" id="A1" alt="game board tile"/></div>
