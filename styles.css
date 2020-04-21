@@ -35,8 +35,7 @@ h2 {
   text-shadow: 1px 1px 1px #000000;
 }
 
-img.gameboard-tile,
-img.gameboard-tile-div {
+img.gameboard-tile {
   height: 100px;
   width: auto;
   border: 3px solid black;
@@ -64,8 +63,6 @@ div.gameboard-tile-div {
 
 /* PLAYER SECTION RULES */
 .player-section {
-  display: flex;
-  flex-direction: column;
   background-color: #D9F9A5;
   padding: 10px;
 }
@@ -80,16 +77,19 @@ div.gameboard-tile-div {
   grid-area: wins-grid;
   display: flex;
   flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
 .miniboard {
   display: grid;
-  grid-template-rows: 25px 25px 25px;
-  grid-template-columns: 25px 25px 25px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1px;
   background-color: #F4FEC1;
   border: 1px solid #003D1A;
   margin: 3px;
+  width: 81px;
+  height: 81px;
 }
 
 /* IMAGE RULES */

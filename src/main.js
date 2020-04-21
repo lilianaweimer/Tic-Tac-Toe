@@ -16,11 +16,11 @@ function takeTurn() {
   if (newGame.winner === null || newGame.winner === playerOne || newGame.winner === playerTwo) {
     startNewRound();
     startNewTurn();
-  } else if (event.target.className = ".gameboard-tile-div") {
+  } else if (event.target.className = "gameboard-tile") {
     var tile = event.target.getAttribute("data-id");
-    event.target.closest(".gameboard-tile");
+    event.target.closest("gameboard-tile");
     event.target.innerHTML = `
-    <img src="${newGame.currentPlayer.token}" class="gameboard-tile" id="A1" data-id="A1" alt="${newGame.currentPlayer.name}"/>
+      <img src=${newGame.currentPlayer.token} class="gameboard-tile" alt=${newGame.currentPlayer.name}/>
     `;
     newGame.changeGameboardTile(tile);
     checkForWin();
