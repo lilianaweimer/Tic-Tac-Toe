@@ -36,12 +36,6 @@ h2 {
 }
 
 img.gameboard-tile,
-img.gameboard-tile-div {
-  height: 100px;
-  width: auto;
-  border: 3px solid black;
-}
-
 div.gameboard-tile-div {
   height: 100px;
   width: auto;
@@ -49,11 +43,11 @@ div.gameboard-tile-div {
 }
 
 .gameboard {
+  grid-area: gameboard;
+  align-self: center;
   background-image: url("https://cdn.pixabay.com/photo/2013/07/12/16/37/cobweb-151265_640.png");
   background-size: 600px auto;
   background-position: center;
-  grid-area: gameboard;
-  align-self: center;
   display: grid;
   grid-template-rows: 105px 105px 105px;
   grid-template-columns: 105px 105px 105px;
@@ -64,10 +58,14 @@ div.gameboard-tile-div {
 
 /* PLAYER SECTION RULES */
 .player-section {
-  display: flex;
-  flex-direction: column;
   background-color: #D9F9A5;
   padding: 10px;
+}
+
+img.player-image {
+  height: 75px;
+  width: auto;
+  padding-top: 20px;
 }
 
 .win-count {
@@ -75,28 +73,26 @@ div.gameboard-tile-div {
   background-color: #D9F9A5;
 }
 
-.player-one-wins-grid,
-.player-two-wins-grid {
-  grid-area: wins-grid;
+#player-one-wins-grid,
+#player-two-wins-grid {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
+  height: 410px;
+  overflow-y: scroll;
+  padding: 30px;
 }
 
 .miniboard {
   display: grid;
-  grid-template-rows: 25px 25px 25px;
-  grid-template-columns: 25px 25px 25px;
+  width: 81px;
+  height: 81px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1px;
   background-color: #F4FEC1;
   border: 1px solid #003D1A;
   margin: 3px;
-}
-
-/* IMAGE RULES */
-img.player-image {
-  height: 75px;
-  width: auto;
-  padding-top: 20px;
 }
 
 img.mini-gameboard-tile {

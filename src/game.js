@@ -62,8 +62,8 @@ class Game {
   detectDraw() {
     var board = this.gameboard;
     var wholeBoard = (board[0].num + board[1].num + board[2].num + board[3].num + board[4].num + board[5].num + board[6].num + board[7].num + board[8].num);
-    if (wholeBoard === 45 && this.winner === undefined) {
-      this.winner = null;
+    if (wholeBoard >= 45 && this.winner === undefined) {
+      this.winner = "nobody";
       this.resetGameBoard();
     }
   }
