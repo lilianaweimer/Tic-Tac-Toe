@@ -5,6 +5,8 @@ Liliana Weimer
 
 GitHub profile: https://github.com/lilianaweimer
 
+GiHub Pages link: https://lilianaweimer.github.io/Tic-Tac-Toe/
+
 ## About Project:
 This is the final project from the Turing School for Software and Design's Mod 1. It is the second solo project of the mod, and it builds on the previous two group projects. The aim of the project is to create a functional Tic Tac Toe game from the ground up. This is the first game we have built in the program and because of that it has proven to be extra challenging. It is intended to challenge our logical thinking and problem-solving abilities, as well as solidify our understanding of concepts we have learned throughout the mod. The specification can be found [here](https://frontend.turing.io/projects/module-1/tic-tac-toe-solo.html).
 
@@ -47,10 +49,7 @@ This is the final project from the Turing School for Software and Design's Mod 1
 - The `checkWinConditions` method held me up for an entire day
 - Connecting classes to the DOM
 - Breaking the project down into manageable chunks
-- One error persists, that I cannot find the source of:
-  - When an image is double-clicked, there is an error due to its class changing and `takeTurn` calling `changeGameboardTile`
-  - This error does not break the game, however
-- Refactoring occasionally broke other parts of the game, which I had to work my way through fixing (time consuming and sometimes confusing)
+- Refactoring occasionally broke parts of the game, which I had to work my way through fixing (time consuming and sometimes confusing)
 - Planning document could have been written more clearly so others could understand it better
 - Fixing bugs along the way
 
